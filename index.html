@@ -1,5 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J.Will Auto Detailing | Mobile Auto Detailing San Antonio, TX</title>
+<meta name="description" content="Fully mobile auto detailing in San Antonio, TX — daily drivers to exotics, plus commercial fleet detailing and food truck / kitchen hood cleaning. Text (210) 859-0358.">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0f14'/%3E%3Cpath d='M15,68 L15,55 C15,44 27,39 42,37 L60,20 C68,13 80,10 88,14 L92,30 C94,38 94,50 94,55 L94,68 Z' fill='none' stroke='%233cff8e' stroke-width='5'/%3E%3Ccircle cx='32' cy='68' r='9' fill='none' stroke='%23c7d3dc' stroke-width='5'/%3E%3Ccircle cx='78' cy='68' r='9' fill='none' stroke='%23c7d3dc' stroke-width='5'/%3E%3C/svg%3E">
+<meta property="og:title" content="J.Will Auto Detailing — Mobile Detailing, San Antonio TX">
+<meta property="og:description" content="From daily driver to V12, we make it sparkle. Fully mobile detailing for San Antonio & surrounding areas — residential and commercial.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://charles-lazcano.github.io/jwill-auto-detailing/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "J.Will Auto Detailing",
+  "telephone": "+1-210-859-0358",
+  "areaServed": "San Antonio, TX and surrounding areas",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Antonio",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "sameAs": ["https://www.instagram.com/iii.washcars/"],
+  "priceRange": "$$",
+  "description": "Fully mobile auto detailing serving San Antonio, TX — daily drivers to exotics, plus commercial fleet detailing and food truck / kitchen hood cleaning."
+}
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<title>J.Will Auto Detailing</title>
 <style>
   :root{
     --ink:#0b0f14;
@@ -28,6 +58,7 @@
   }
   body{
     margin:0;
+    overflow-x:hidden;
     background:var(--ink);
     color:var(--paper);
     font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
@@ -63,7 +94,7 @@
     display:inline-flex;align-items:center;justify-content:center;gap:.5em;
     padding:.95em 1.5em;border-radius:999px;border:1px solid transparent;
     text-decoration:none;cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease;
-    white-space:nowrap;
+    white-space:nowrap;min-height:44px;
   }
   .btn:active{transform:scale(.97);}
   .btn-solid{background:var(--accent);color:var(--accent-ink);}
@@ -98,7 +129,7 @@
     border-bottom:1px solid var(--line-soft);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem;}
-  .logo{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;}
+  .logo{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;flex-wrap:wrap;min-width:0;}
   .logo b{font-family:"Big Shoulders Display";font-weight:900;font-size:1.5rem;letter-spacing:.02em;}
   .logo span{font-family:"IBM Plex Mono";font-size:.62rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;}
   .nav-links{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;font-size:.86rem;}
@@ -107,7 +138,7 @@
   .nav-actions{display:flex;align-items:center;gap:.6rem;}
   .nav-cta-desktop{display:flex;gap:.6rem;}
   #navToggle{display:none;}
-  .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:.5em .65em;color:var(--paper);}
+  .burger{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;background:none;border:1px solid var(--line);border-radius:8px;padding:.5em .65em;color:var(--paper);font-size:1.1rem;}
   @media (max-width:900px){
     .nav-links{display:none;}
     .nav-cta-desktop{display:none;}
@@ -237,7 +268,7 @@
   .filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.8rem;}
   .filter-btn{
     font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
-    border:1px solid var(--line);background:transparent;color:var(--muted);padding:.5em 1em;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:transparent;color:var(--muted);padding:.75em 1.1em;border-radius:999px;cursor:pointer;min-height:44px;
   }
   .filter-btn.active{border-color:var(--accent);color:var(--accent);}
   .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
@@ -252,7 +283,7 @@
   .lightbox[hidden]{display:none;}
   .lb-panel{max-width:520px;width:100%;background:var(--surface);border:1px solid var(--line);position:relative;padding:1.5rem;}
   .lb-panel svg{width:100%;aspect-ratio:4/3;}
-  .lb-close{position:absolute;top:.7rem;right:.7rem;background:var(--surface-2);border:1px solid var(--line);color:var(--paper);width:2.2rem;height:2.2rem;border-radius:999px;cursor:pointer;font-size:1rem;}
+  .lb-close{position:absolute;top:.7rem;right:.7rem;display:flex;align-items:center;justify-content:center;background:var(--surface-2);border:1px solid var(--line);color:var(--paper);width:2.75rem;height:2.75rem;border-radius:999px;cursor:pointer;font-size:1.1rem;}
 
   /* ---------- reviews ---------- */
   .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:2.5rem;}
@@ -297,6 +328,8 @@
     body{padding-bottom:4.6rem;}
   }
 </style>
+</head>
+<body>
 
 <header>
   <div class="wrap nav">
@@ -826,24 +859,6 @@
     </div>
   </section>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "J.Will Auto Detailing",
-    "telephone": "+1-210-859-0358",
-    "areaServed": "San Antonio, TX and surrounding areas",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Antonio",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    },
-    "sameAs": ["https://www.instagram.com/iii.washcars/"],
-    "priceRange": "$$",
-    "description": "Fully mobile auto detailing serving San Antonio, TX — daily drivers to exotics, plus commercial fleet detailing and food truck / kitchen hood cleaning."
-  }
-  </script>
 </main>
 
 <footer class="site-foot">
@@ -930,3 +945,5 @@
   wireForm('commercialForm', 'cMsg', 'New commercial / fleet quote request');
 })();
 </script>
+</body>
+</html>
