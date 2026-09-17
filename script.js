@@ -6,12 +6,26 @@
     var range = ba.querySelector('.ba-range');
     var after = ba.querySelector('.ba-after');
     var handle = ba.querySelector('.ba-handle');
+    var audioId = ba.getAttribute('data-audio');
+    var revealAudio = audioId ? document.getElementById(audioId) : null;
+    var revealed = false;
 
     function setValue(v){
       v = Math.min(100, Math.max(0, v));
       range.value = v;
       after.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
       handle.style.left = v + '%';
+
+      if(revealAudio){
+        if(v >= 100 && !revealed){
+          revealed = true;
+          revealAudio.currentTime = 0;
+          revealAudio.play().catch(function(){});
+        } else if(v < 100 && revealed){
+          revealed = false;
+          revealAudio.pause();
+        }
+      }
     }
 
     function valueFromClientX(clientX){
@@ -22,10 +36,24 @@
     // keyboard (native range) still moves the handle
     range.addEventListener('input', function(){ setValue(Number(range.value)); });
 
+    // mobile Safari only allows audio.play() from inside a direct user-gesture
+    // event (like the initial touch), not a later pointermove mid-drag — so
+    // "unlock" playback right on first touch/click, before the drag begins.
+    var audioUnlocked = false;
+    function unlockAudio(){
+      if(!revealAudio || audioUnlocked) return;
+      audioUnlocked = true;
+      revealAudio.play().then(function(){
+        revealAudio.pause();
+        revealAudio.currentTime = 0;
+      }).catch(function(){});
+    }
+
     // mouse + touch: drag the handle (or anywhere on the image) directly
     var dragging = false;
     function onDown(e){
       dragging = true;
+      unlockAudio();
       if(ba.setPointerCapture){ ba.setPointerCapture(e.pointerId); }
       setValue(valueFromClientX(e.clientX));
     }

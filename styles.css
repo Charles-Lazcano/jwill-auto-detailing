@@ -194,6 +194,7 @@ header{
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;pointer-events:none;}
 .ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:100%;height:100%;}
 .ba-range::-moz-range-thumb{width:44px;height:100%;border:none;background:transparent;}
+.ba audio{display:none;}
 .ba-caption{margin-top:2.2rem;text-align:center;color:var(--muted);font-size:.92rem;}
 .grime-dot{fill:var(--grime);opacity:.55;}
 
